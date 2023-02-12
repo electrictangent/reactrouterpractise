@@ -1,29 +1,13 @@
 import React, { Component } from 'react';
 import Table from './Table';
+import Form from './Form';
 
 
 // Render class component Table
 class App extends Component {
     // Adding state object
     state = {
-        characters: [
-            {
-            name: 'Charlie',
-            job: 'Janitor',
-            },
-            {
-            name: 'Mac',
-            job: 'Bouncer',
-            },
-            {
-            name: 'Dee',
-            job: 'Aspring actress',
-            },
-            {
-            name: 'Dennis',
-            job: 'Bartender',
-            },
-        ]
+        characters: [],
     }
 
     // Method to update state
@@ -35,6 +19,11 @@ class App extends Component {
                 return i !== index
             }),
         })
+    }
+
+    // Method to submit new person and job
+    handleSubmit = (character) => {
+        this.setState({ characters: [...this.state.characters, character] })
     }
 
     render() {
@@ -63,7 +52,8 @@ class App extends Component {
         return (
         <div className="container">
             <h1>Hello, React!</h1>
-            <Table characterData={characters} removeCharacter={this.removeCharacter} /> 
+            <Table characterData={characters} removeCharacter={this.removeCharacter} />
+            <Form handleSubmit={this.handleSubmit} />
         </div>
         )
     }
