@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App'
 import './index.css'
 
-/* const root = ReactDOM.createRoot(document.getElementById('root'));
+/* JSX examples:
 
 const header1 = <h1>Hello React!</h1>
 const header2 = (
@@ -15,8 +15,9 @@ const header2 = (
   </ul>
 );
 
-root.render(header1);
-root.render(header2);
+const name = 'John Doe';
+const banner = <h1>Hello, {name}</h1>
+
  */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
